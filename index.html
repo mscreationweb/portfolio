@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M S Creation Portfolio</title>
 
-  <!-- ✅ Auto Redirect after 1 second -->
-  <meta http-equiv="refresh" content="1; url=portfolio.pdf" />
-
   <style>
-    /* Fullscreen body with animated gradient */
     body {
       margin: 0;
       height: 100vh;
@@ -19,21 +15,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     @keyframes bgAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Logo animation */
     img {
       width: 200px;
       height: auto;
@@ -41,18 +31,40 @@
     }
 
     @keyframes fadeZoom {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <img src="https://mscreation.tech/assets/logo-DTsGUMYS.png" alt="M S Creation Logo" />
+  <img src="https://mscreation.tech/assets/logo-DTsGUMYS.png" alt="M S Creation Logo" id="logo" />
+
+  <!-- PDF Viewer for Mobile -->
+  <iframe src="portfolio.pdf" id="pdfFrame" class="hidden"></iframe>
+
+  <script>
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const logo = document.getElementById("logo");
+    const iframe = document.getElementById("pdfFrame");
+
+    setTimeout(() => {
+      if (isMobile) {
+        logo.classList.add("hidden");
+        iframe.classList.remove("hidden");
+      } else {
+        window.location.href = "portfolio.pdf";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
