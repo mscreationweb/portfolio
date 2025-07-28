@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M S Creation Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M S Creation Portfolio</title>
+
+  <!-- ✅ Auto Redirect after 1 second -->
+  <meta http-equiv="refresh" content="1; url=portfolio.pdf" />
+
+  <style>
+    /* Fullscreen body with animated gradient */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg, #002E23, #BFF747, #002E23, #BFF747);
+      background-size: 400% 400%;
+      animation: bgAnimation 6s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes bgAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Logo animation */
+    img {
+      width: 200px;
+      height: auto;
+      animation: fadeZoom 0.9s ease-in-out;
+    }
+
+    @keyframes fadeZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
-     <p>Redirecting to your profile PDF... <a href="portfolio.pdf">Click here if not redirected</a>.</p>
-    
+  <img src="https://mscreation.tech/assets/logo-DTsGUMYS.png" alt="M S Creation Logo" />
 </body>
 </html>
